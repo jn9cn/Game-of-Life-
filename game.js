@@ -73,23 +73,36 @@ var gameOfLife = {
         this.dataset.status = 'dead';
       }
     };
-    var clear = function(){
-      var clearButton = document.getElementById('clear_btn');
-      console.log(clearButton);
-      clearButton.addEventListener('click', function() {console.log("clicked")});
 
+    var cellFunc = function(cell) {
+       cell.addEventListener('click', onCellClick);
     };
 
-    var iterator = function(cell) {
-      cell.addEventListener('click', onCellClick);
-    }
-    this.forEachCell(iterator);
+    this.forEachCell(cellFunc);
+
+    var clearBtn = document.getElementById('clear_btn');
+    clearBtn.addEventListener('click', );
+
+    // var clear = function(){
+    //   var clearButton = document.getElementById('clear_btn');
+    //   console.log(clearButton);
+    //   clearButton.addEventListener('click', function() {console.log("clicked")});
+
+    // };
+
+    // var iterator = function(cell) {
+    //   cell.addEventListener('click', onCellClick);
+    // }
+    // this.forEachCell(iterator);
+
     // var cell00 = document.getElementById('0-0');
     // cell00.addEventListener('click', onCellClick);
   },
-  clear: function(){
-
+  
+  clear: function() {
+    
   },
+
   random: function(){
 
   }
